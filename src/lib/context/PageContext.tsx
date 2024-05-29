@@ -1,4 +1,7 @@
-import { Dispatch, ReactNode, createContext, useContext } from 'react';
+'use client';
+
+import React, { Dispatch, ReactNode, createContext, useContext } from 'react';
+
 import useSessionStorage from '../hooks/useSessionStorage';
 
 export type PageDispatch = Dispatch<any>;
