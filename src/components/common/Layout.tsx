@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import Navbar from './Navbar';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-// TODO: add Navbar, Footer
-const Layout = ({ children }: Props) => <>{children}</>;
+const Layout = ({ children }: Props) => (
+  <>
+    <Navbar />
+    {children}
+  </>
+);
 
 export default Layout;

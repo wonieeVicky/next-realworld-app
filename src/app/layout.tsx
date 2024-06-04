@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google';
 
 import './globals.css';
 import ContextProvider from '@/lib/context';
+import Layout from '@/components/common/Layout';
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sans.className}>
-        <ContextProvider>{children}</ContextProvider>
+        <ContextProvider>
+          <Layout>{children}</Layout>
+        </ContextProvider>
       </body>
     </html>
   );
