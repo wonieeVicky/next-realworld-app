@@ -9,8 +9,8 @@ type Props = {
 };
 
 const CustomLink = ({ className, href, as, children }: Props) => (
-  <Link href={href} as={as} passHref>
-    <a className={className || ''}>{children}</a>
+  <Link href={href} as={as} className={className || ''} passHref>
+    {children}
   </Link>
 );
 
