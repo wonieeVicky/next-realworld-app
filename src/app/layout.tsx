@@ -6,6 +6,8 @@ import Layout from '@/components/common/Layout';
 import Head from 'next/head';
 import localFont from 'next/font/local';
 
+import 'https://demo.productionready.io/main.css';
+
 export const metadata: Metadata = {
   title: {
     default: 'Home',
@@ -35,29 +37,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${pretendard.variable}`}>
-      <Head>
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="robots" content="index, follow" />
-        <meta key="googlebot" name="googlebot" content="index,follow" />
-        <meta name="google" content="notranslate" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="keywords" content="nextjs, realworld" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:site_name" content="next-realworld" />
-        <meta property="og:title" content="Next.js realworld example app" />
-        <meta
-          property="og:description"
-          content="Next.js + SWR codebase containing realworld examples"
+      <body className={pretendard.className}>
+        <link
+          rel="stylesheet"
+          href="https://demo.productionready.io/main.css"
         />
-        <link rel="stylesheet" href="//demo.productionready.io/main.css" />
         <link
           rel="stylesheet"
           href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
         />
-      </Head>
-      <body className={pretendard.className}>
         <ContextProvider>
           <Layout>{children}</Layout>
         </ContextProvider>
