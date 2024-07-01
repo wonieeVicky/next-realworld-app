@@ -97,6 +97,17 @@ const ArticleList = () => {
       {articles?.map((article) => (
         <ArticlePreview key={article.slug} article={article} />
       ))}
+
+      <Maybe test={articlesCount && articlesCount > 20}>
+        <Pagination
+          total={pageCount}
+          limit={20}
+          pageCount={vw >= 768 ? 10 : 5}
+          currentPage={page}
+          lastIndex={lastIndex}
+          fetchURL={fetchURL}
+        />
+      </Maybe>
     </>
   );
 };
