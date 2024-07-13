@@ -25,6 +25,7 @@ export default async function ArticlePage({ params: { pid } }: Props) {
       <div className="banner">
         <div className="container">
           <h1>{article?.title}</h1>
+          <ArticleMeta article={article} />
         </div>
       </div>
     </div>

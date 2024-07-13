@@ -1,3 +1,4 @@
+'use client';
 import { DEFAULT_IMAGE_SOURCE } from '@/lib/utils/contants';
 import handleBrokenImage from '@/lib/utils/handleBrokenImage';
 
