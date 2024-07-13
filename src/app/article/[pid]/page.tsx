@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import ArticleAPI from '@/lib/api/article';
 import ArticleMeta from '@/components/article/ArticleMeta';
+import ArticleDescription from '@/components/article/ArticleDescription';
 
 type Props = {
   params: {
@@ -26,6 +27,13 @@ export default async function ArticlePage({ params: { pid } }: Props) {
         <div className="container">
           <h1>{article?.title}</h1>
           <ArticleMeta article={article} />
+        </div>
+      </div>
+      <div className="container page">
+        <div className="row article-content">
+          <div className="col-xs-12">
+            <ArticleDescription article={article} />
+          </div>
         </div>
       </div>
     </div>
