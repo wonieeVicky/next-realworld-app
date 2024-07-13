@@ -2,11 +2,8 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 
-import fetcher from '@/lib/utils/fetcher';
-import { SERVER_BASE_URL } from '@/lib/utils/contants';
-
-import useSWR from 'swr';
 import ArticleAPI from '@/lib/api/article';
+import ArticleMeta from '@/components/article/ArticleMeta';
 
 type Props = {
   params: {
@@ -15,7 +12,23 @@ type Props = {
 };
 
 export default async function ArticlePage({ params: { pid } }: Props) {
-  return <div className="article-page"></div>;
+  const {
+    data: { article }
+  } = await ArticleAPI.get(pid);
+
+  if (!article) {
+    notFound();
+  }
+
+  return (
+    <div className="article-page">
+      <div className="banner">
+        <div className="container">
+          <h1>{article?.title}</h1>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export async function generateMetadata({
